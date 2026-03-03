@@ -222,3 +222,50 @@ button{
 button.primary{ background:#0b2239; color:#fff; }
 button.ghost{ background:rgba(11,34,57,.08); color:#0b2239; }
 .note{ font-size:12px; opacity:.7; margin-top:10px; }
+
+/* --- Mobile controls --- */
+.mobileControls{
+  position:absolute;
+  inset:auto 14px 14px 14px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  pointer-events:none;
+}
+
+.ctrlBtn{
+  pointer-events:auto;
+  user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  border:1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.22);
+  color:#fff;
+  padding:12px 14px;
+  border-radius:16px;
+  font-weight:800;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.ctrlBtn:active{ transform: translateY(1px); }
+
+.ctrlHint{
+  font-size:12px;
+  opacity:.85;
+  font-weight:700;
+}
+
+@media (min-width: 820px){
+  .mobileControls{ display:none; }
+}
+
+/* Make mario movement smoother when we set translateY in JS */
+.mario{
+  will-change: transform;
+}
+.pipe{
+  will-change: transform;
+}
